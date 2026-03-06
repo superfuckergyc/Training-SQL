@@ -23,7 +23,7 @@ Address表:
 +-----------+----------+---------------+----------+
 
 🎈答案：
-select FirstName,LastName,City,statement
+select FirstName,LastName,City,state
 from Person left join Address
 on Person.PersonId=Address.PersonId;
 
