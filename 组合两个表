@@ -1,0 +1,39 @@
+🎈题目：
+输入: 
+Person表:
++----------+----------+-----------+
+| personId | lastName | firstName |
++----------+----------+-----------+
+| 1        | Wang     | Allen     |
+| 2        | Alice    | Bob       |
++----------+----------+-----------+
+Address表:
++-----------+----------+---------------+------------+
+| addressId | personId | city          | state      |
++-----------+----------+---------------+------------+
+| 1         | 2        | New York City | New York   |
+| 2         | 3        | Leetcode      | California |
++-----------+----------+---------------+------------+
+输出: 
++-----------+----------+---------------+----------+
+| firstName | lastName | city          | state    |
++-----------+----------+---------------+----------+
+| Allen     | Wang     | Null          | Null     |
+| Bob       | Alice    | New York City | New York |
++-----------+----------+---------------+----------+
+
+🎈答案：
+select FirstName,LastName,City,statement
+from Person left join Address
+on Person.PersonId=Address.PersonId;
+
+✨笔记
+inner join：2表值都存在
+outer join：附表中值可能存在null的情况。
+
+总结：
+　　①A inner join B：取交集
+　　②A left join B：取A全部，B没有对应的值，则为null
+　　③A right join B：取B全部，A没有对应的值，则为null
+　　④A full outer join B：取并集，彼此没有对应的值为null
+上述4种的对应条件，在on后填写。
