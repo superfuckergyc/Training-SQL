@@ -37,3 +37,9 @@ outer join：附表中值可能存在null的情况。
 　　③A right join B：取B全部，A没有对应的值，则为null
 　　④A full outer join B：取并集，彼此没有对应的值为null
 上述4种的对应条件，在on后填写。
+
+若写成
+select FirstName, LastName, City, state
+from Person left join Address
+where Person.PersonId = Address.PersonId;
+这个写法等价于 INNER JOIN，会丢失左表中无匹配的行（比如 PersonId=1 的 Wang Allen 会被过滤掉），结果变成只有一行。
