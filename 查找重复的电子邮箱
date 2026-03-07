@@ -1,0 +1,31 @@
+🎈题目：
+输入: 
+Person 表:
++----+---------+
+| id | email   |
++----+---------+
+| 1  | a@b.com |
+| 2  | c@d.com |
+| 3  | a@b.com |
++----+---------+
+输出: 
++---------+
+| Email   |
++---------+
+| a@b.com |
++---------+
+解释: a@b.com 出现了两次。
+
+🎈答案：
+select email as Email
+from Person
+group by Email
+having count(Email)>1;
+或者
+select Email from
+(
+   select email,count(email) as num
+   from Persom
+   group by Email
+)
+where num>1;
