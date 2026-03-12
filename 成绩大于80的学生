@@ -1,0 +1,19 @@
+🎈：题目
+Table Score{
+name, #姓名
+project, #课程
+score #分数
+}
+
+张三，语文，80
+李四，语文，60
+张三，数学，90
+李四，数学，70
+用一条SQL语句查询出2门及以上课程成绩大于 80 分的学生姓名
+
+🎈：答案
+select name
+from Score
+where score>=80
+group by name
+having count(*)>=2
