@@ -1,0 +1,12 @@
+🎈题目：
+请使用mysql语句建一个学生表。表列包含学生学号，学生姓名，学生入学日期，学生生日。以学号建唯一索引。
+
+🎈答案：
+CREATE TABLE students(
+   student_id VARCHAR(20) NOT NULL COMMENT '学生学号',
+   student_name VARCHAR(20) NOT NULL COMMENT '学生姓名',
+   enrollment_data DATE COMMENT '入学日期',
+   birthday DATE COMMENT '生日',
+   PRIMARY KEY (student_id),
+   UNIQUE INDEX idx_stu (student_id)
+)
